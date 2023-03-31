@@ -79,9 +79,6 @@ const WelComeButton = styled.div`
     ::first-letter {
       text-transform: uppercase;
     }
-    /* : {
-      background-color: red;
-    } */
     cursor: pointer;
   }
 `;

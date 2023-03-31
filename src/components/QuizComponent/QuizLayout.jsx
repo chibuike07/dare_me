@@ -7,22 +7,23 @@ import styled from "styled-components";
 import Options from "./Options";
 
 const QuizLayout = () => {
-  const [{ currentQuizData, quizIndex }, dispatch] = useContext(GameContext);
+  const [{ currentQuizData, quizData, quizIndex }, dispatch] =
+    useContext(GameContext);
   const [showSkip, setShowSkip] = useState(true);
-
   const { isLoading, isFetching } = useQuery({
     queryKey: ["getQuiz"],
     refetchOnWindowFocus: false,
     queryFn: getQuiz,
     retry: 1,
     onError: (data) => {
+      console.log("data", data);
       // console.log("data.response.error", data.response.error);
     },
     onSuccess: (data) => {
-      dispatch({ type: t.FETCH_QUIZZ, payload: data.quizData || [] });
+      dispatch({ type: t.FETCH_QUIZZ, payload: data || [] });
       dispatch({
         type: t.CURRENT_QUIZZ,
-        payload: [data.quizData[quizIndex]] || [],
+        payload: [data[quizIndex]] || ["uoi"],
       });
     },
   });
@@ -38,45 +39,52 @@ const QuizLayout = () => {
     };
   }, [quizIndex]);
 
+  const handleSkipQuizz = () => {
+    dispatch({ type: t.SKIP_QUIZZ, payload: currentQuizData[0]?.id });
+    dispatch({ type: t.CURRENT_QUIZZ, payload: [quizData[quizIndex + 1]] });
+    dispatch({ type: t.QUIZZ_INDEX, payload: quizIndex + 1 });
+  };
+
   if (isLoading || isFetching) return <small>...Loading</small>;
-  // if (isError) return <small>Fail</small>;
 
   return (
     <Container>
-      {currentQuizData.length > 0
-        ? currentQuizData.map(
-            ({
-              id,
-              no,
-              type,
-              difficulty,
-              quiz: { question, answers, correctAnswer },
-            }) => {
-              return (
-                <QuizzWrapper key={id}>
-                  <header className="header">
-                    <aside className="header_aside">
-                      <small>{id}</small>
-                      <small>{difficulty}</small>
-                    </aside>
+      {currentQuizData?.length > 0 ? (
+        currentQuizData.map(
+          ({
+            id,
+            no,
+            type,
+            difficulty,
+            quiz: { question, answers, correctAnswer },
+          }) => {
+            return (
+              <QuizzWrapper key={id}>
+                <header className="header">
+                  <aside className="header_aside">
+                    <small>{id}</small>
+                    <small>{difficulty}</small>
+                  </aside>
 
-                    <h4>{question}</h4>
-                  </header>
+                  <h4>{question}</h4>
+                </header>
 
-                  <Options answers={answers} correctAnswer={correctAnswer} />
+                <Options answers={answers} correctAnswer={correctAnswer} />
 
-                  {showSkip ? (
-                    <ButtonGroup>
-                      <button onClick={() => {}}>skip</button>
-                    </ButtonGroup>
-                  ) : (
-                    false
-                  )}
-                </QuizzWrapper>
-              );
-            }
-          )
-        : false}
+                {showSkip ? (
+                  <ButtonGroup>
+                    <button onClick={() => handleSkipQuizz()}>skip</button>
+                  </ButtonGroup>
+                ) : (
+                  false
+                )}
+              </QuizzWrapper>
+            );
+          }
+        )
+      ) : (
+        <div>{JSON.stringify(quizData)}</div>
+      )}
     </Container>
   );
 };
@@ -151,13 +159,33 @@ const QuizzWrapper = styled.article`
 
 const ButtonGroup = styled.section`
   margin-top: 2rem;
+  position: fixed;
+  bottom: 20%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+
+  animation: move 1s ease-in-out;
+  @keyframes move {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-30%);
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    right: 30%;
+    bottom: 5%;
+  }
   button {
     width: 50px;
     height: 50px;
     clip-path: circle(50%);
-    border: 5px solid;
     cursor: pointer;
     background: ${(props) =>
       props.selected

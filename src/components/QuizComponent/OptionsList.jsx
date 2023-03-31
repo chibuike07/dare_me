@@ -157,6 +157,7 @@ const Lists = styled.div`
   align-items: center;
   border: 5px solid;
   cursor: pointer;
+  transition: border 2s ease-in-out;
   background: ${(props) =>
     props.selected
       ? "linear-gradient(var(--main_bg_color), var(--main_bg_color)) padding-box,linear-gradient(45deg, var(--box_selected_ans_color), var(--box_selected_ans_color_2)) border-box"

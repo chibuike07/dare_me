@@ -36,7 +36,7 @@ export const reducer = (state, action) => {
     case t.SKIP_QUIZZ:
       return {
         ...state,
-        answeredQuizData: [...state.skippedQuiz, payload],
+        skippedQuiz: [...state.skippedQuiz, payload],
       };
 
     case t.QUIZZ_INDEX:

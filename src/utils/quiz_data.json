@@ -1,0 +1,139 @@
+{
+  "quizData": [
+    {
+      "id": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": "EASY",
+      "multiple_response": false,
+      "quiz": {
+        "question": "Which protocol is used to access webpages?",
+        "answers": {
+          "a": "DNS",
+          "b": "FTP",
+          "c": "HTTP"
+        },
+        "correctAnswer": "c"
+      }
+    },
+    {
+      "id": 2,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": "MEDIUM",
+      "multiple_response": false,
+      "quiz": {
+        "question": "What does HTML stand for?",
+        "answers": {
+          "a": "High Tech Machine Language",
+          "b": "Hypertext Markup Language",
+          "c": "Hardware Technology Marker Language"
+        },
+        "correctAnswer": "b"
+      }
+    },
+    {
+      "id": 3,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": "EASY",
+      "multiple_response": false,
+      "quiz": {
+        "question": "Which networking protocol is used to transfer files between two computers?",
+        "answers": {
+          "a": "FTP",
+          "b": "SSH",
+          "c": "SMTP"
+        },
+        "correctAnswer": "a"
+      }
+    },
+    {
+      "id": 4,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": "MEDIUM",
+      "multiple_response": false,
+      "quiz": {
+        "question": "What company made the first color arcade game?",
+        "answers": {
+          "a": "Sony",
+          "b": "Nintendo",
+          "c": "Atari"
+        },
+        "correctAnswer": "c"
+      }
+    },
+    {
+      "id": 5,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": "EASY",
+      "multiple_response": false,
+      "quiz": {
+        "question": "In computer networking, what does DNS stand for?",
+        "answers": {
+          "a": "Domain Name System",
+          "b": "Data Network Server",
+          "c": "Dynamic Network System"
+        },
+        "correctAnswer": "a"
+      }
+    },
+    {
+      "id": 6,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": "HARD",
+      "multiple_response": false,
+      "quiz": {
+        "question": "Which popular software command is used to download a file from a web server?",
+        "answers": {
+          "a": "download",
+          "b": "wget",
+          "c": "download"
+        },
+        "correctAnswer": "b"
+      }
+    },
+    {
+      "id": 7,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": "MEDIUM",
+      "multiple_response": false,
+      "quiz": {
+        "question": "What was the first ever message sent via morse code?",
+        "answers": {
+          "a": "What Hath God Wrought",
+          "b": "Good Morning Victory",
+          "c": "You Smell"
+        },
+        "correctAnswer": "a"
+      }
+    },
+    {
+      "id": 8,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": "HARD",
+      "multiple_response": false,
+      "quiz": {
+        "question": "In computing what term does the word modem come from?",
+        "answers": {
+          "a": "Modern Demograph",
+          "b": "Mono Demo",
+          "c": "Modulate Demodulate"
+        },
+        "correctAnswer": "c"
+      }
+    },
+    {
+      "id": 9,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": "HARD",
+      "multiple_response": false,
+      "quiz": {
+        "question": "Which protocol is used to send and receive emails?",
+        "answers": {
+          "a": "SMTP",
+          "b": "FTP",
+          "c": "DNS"
+        },
+        "correctAnswer": "a"
+      }
+    }
+  ]
+}

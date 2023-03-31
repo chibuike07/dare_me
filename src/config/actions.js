@@ -1,0 +1,7 @@
+export const START_QUIZZ = "START_QUIZZ";
+export const FETCH_QUIZZ = "FETCH_QUIZZ";
+export const CURRENT_QUIZZ = "CURRENT_QUIZZ";
+export const CORRECT_ANSWERED_QUIZZ = "CORRECT_ANSWERED_QUIZZ";
+export const ANSWERED_QUIZZ = "ANSWERED_QUIZZ";
+export const SKIP_QUIZZ = "SKIP_QUIZZ";
+export const QUIZZ_INDEX = "QUIZZ_INDEX";

@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { QueryClient, QueryClientProvider } from "react-query";
+import "./App.css";
+import GameContextProvider from "./config/contexts";
+import Quiz from "./pages/Quiz";
 
-function App() {
+const App = () => {
+  const client = new QueryClient();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={client}>
+      <GameContextProvider>
+        <div className="App">
+          <Quiz />
+        </div>
+        ;
+      </GameContextProvider>
+    </QueryClientProvider>
   );
-}
+};
 
 export default App;

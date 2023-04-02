@@ -77,7 +77,6 @@ const OptionsList = ({ options, indicator, correctAnswer }) => {
           answeredQuizData,
           quizIndex,
         });
-        setSelectedAnswer("");
       }, 5000);
     }
   }, [selectedAnswer]);

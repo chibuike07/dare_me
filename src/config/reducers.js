@@ -6,8 +6,12 @@ export const defaultState = {
   currentQuizData: [],
   answeredQuizData: [],
   correctAnsweredQuiz: [],
-  skippedQuiz: [],
+  doLater: [],
+  countSelectedOptions: 0,
   quizIndex: 0,
+  showFeedBack: false,
+  quizDifficulty: "RANDOM",
+  cloneFetchQuizz: [],
 };
 
 export const reducer = (state, action) => {
@@ -26,6 +30,21 @@ export const reducer = (state, action) => {
         ...state,
         correctAnsweredQuiz: [...state.correctAnsweredQuiz, payload],
       };
+    case t.RESET:
+      return {
+        ...state,
+        startQuizz: false,
+        showFeedBack: false,
+        quizIndex: 0,
+        countSelectedOptions: 0,
+        correctAnsweredQuiz: [],
+        currentQuizData: [],
+        quizData: [],
+        answeredQuizData: [],
+        doLater: [],
+        quizDifficulty: "RANDOM",
+        cloneFetchQuizz: [],
+      };
 
     case t.ANSWERED_QUIZZ:
       return {
@@ -33,14 +52,26 @@ export const reducer = (state, action) => {
         answeredQuizData: [...state.answeredQuizData, payload],
       };
 
-    case t.SKIP_QUIZZ:
+    case t.DO_LATER:
       return {
         ...state,
-        skippedQuiz: [...state.skippedQuiz, payload],
+        doLater: [...state.doLater, payload],
       };
 
     case t.QUIZZ_INDEX:
       return { ...state, quizIndex: payload };
+
+    case t.COUNT_SELECTED_OPTION:
+      return { ...state, countSelectedOptions: payload };
+
+    case t.SHOW_FEEDBACK:
+      return { ...state, showFeedBack: payload };
+
+    case t.GET_DIFFICULTY:
+      return { ...state, quizDifficulty: payload };
+
+    case t.CLONE_FETCH_QUIZZ:
+      return { ...state, cloneFetchQuizz: payload };
 
     default:
       return state;

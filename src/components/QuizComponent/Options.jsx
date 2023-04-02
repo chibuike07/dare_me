@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import OptionsList from "./OptionsList";
+import { Answers } from "../../styles/Option";
 
 const Options = ({ answers, correctAnswer }) => {
   return (
@@ -25,12 +25,5 @@ const Options = ({ answers, correctAnswer }) => {
     </Answers>
   );
 };
-
-const Answers = styled.article`
-  display: grid;
-  row-gap: 20px;
-  column-gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-`;
 
 export default Options;

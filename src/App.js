@@ -6,14 +6,13 @@ import Quiz from "./pages/Quiz";
 const App = () => {
   const client = new QueryClient();
   return (
-    <QueryClientProvider client={client}>
-      <GameContextProvider>
-        <div className="App">
-          <Quiz />
-        </div>
-        ;
-      </GameContextProvider>
-    </QueryClientProvider>
+    <div className="App">
+      <QueryClientProvider client={client}>
+        <GameContextProvider>
+          <Quiz />;
+        </GameContextProvider>
+      </QueryClientProvider>
+    </div>
   );
 };
 

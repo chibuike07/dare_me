@@ -23,7 +23,7 @@ const OptionsList = ({ options, indicator, correctAnswer }) => {
   ] = useContext(GameContext);
   const [selected, setSelected] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
-
+  // console.log("selectedAnswer :>> top", selectedAnswer);
   /**
    * If the user has already selected an answer, then don't let them select another one.
    */
@@ -66,30 +66,26 @@ const OptionsList = ({ options, indicator, correctAnswer }) => {
     handleCorrectAnswer();
 
     if (selectedAnswer) {
-      setTimeout(
-        () =>
-          handleNextQuiz({
-            correctAnsweredQuiz,
-            countSelectedOptions,
-            currentQuizData,
-            dispatch,
-            quizData,
-            doLater,
-            answeredQuizData,
-            quizIndex,
-          }),
-        5000
-      );
-      setSelectedAnswer("");
+      setTimeout(() => {
+        handleNextQuiz({
+          correctAnsweredQuiz,
+          countSelectedOptions,
+          currentQuizData,
+          dispatch,
+          quizData,
+          doLater,
+          answeredQuizData,
+          quizIndex,
+        });
+        setSelectedAnswer("");
+      }, 5000);
     }
-    return () => {
-      setSelectedAnswer("");
-    };
   }, [selectedAnswer]);
-
   return (
     <Lists
+      correctAnswer={correctAnswer}
       selected={selected}
+      selectedAnswer={selectedAnswer}
       onClick={() =>
         handleSelectedAnswer({
           text: indicator,

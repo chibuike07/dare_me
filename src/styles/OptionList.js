@@ -9,7 +9,9 @@ export const Lists = styled.div`
   cursor: pointer;
   transition: border 2s ease-in-out;
   background: ${(props) =>
-    props.selected
+    props.selected && props.selectedAnswer !== props.correctAnswer
+      ? "linear-gradient(var(--main_bg_color), var(--main_bg_color)) padding-box,linear-gradient(45deg, red, #994848) border-box"
+      : props.selected && props.selectedAnswer === props.correctAnswer
       ? "linear-gradient(var(--main_bg_color), var(--main_bg_color)) padding-box,linear-gradient(45deg, var(--box_selected_ans_color), var(--box_selected_ans_color_2)) border-box"
       : "linear-gradient(var(--main_bg_color), var(--main_bg_color)) padding-box, linear-gradient(45deg, var(--box_color), var(--box_color)) border-box"};
   border: 5px solid transparent;
@@ -27,7 +29,11 @@ export const Lists = styled.div`
     font-size: var(--pointer_fs);
     font-weight: bold;
     background-color: ${(props) =>
-      props.selected ? "var(--box_selected_ans_color)" : "var(--box_color)"};
+      props.selected && props.selectedAnswer !== props.correctAnswer
+        ? "red"
+        : props.selected && props.selectedAnswer === props.correctAnswer
+        ? "var(--box_selected_ans_color)"
+        : "var(--box_color)"};
     margin-right: 1rem;
     text-transform: uppercase;
   }

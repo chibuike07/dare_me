@@ -12,7 +12,8 @@
           {
             "a": "DNS",
             "b": "FTP",
-            "c": "HTTP"
+            "c": "HTTP",
+            "d": "PDF"
           }
         ],
         "correctAnswer": "c"
@@ -30,7 +31,8 @@
           {
             "a": "High Tech Machine Language",
             "b": "Hypertext Markup Language",
-            "c": "Hardware Technology Marker Language"
+            "c": "Hardware Technology Marker Language",
+            "d": "Hard Tech Marker Language"
           }
         ],
         "correctAnswer": "b"
@@ -48,7 +50,8 @@
           {
             "a": "FTP",
             "b": "SSH",
-            "c": "SMTP"
+            "c": "SMTP",
+            "d": "MTP"
           }
         ],
         "correctAnswer": "a"
@@ -66,7 +69,8 @@
           {
             "a": "Sony",
             "b": "Nintendo",
-            "c": "Atari"
+            "c": "Atari",
+            "d": "Panasonic"
           }
         ],
         "correctAnswer": "c"
@@ -84,7 +88,8 @@
           {
             "a": "Domain Name System",
             "b": "Data Network Server",
-            "c": "Dynamic Network System"
+            "c": "Dynamic Network System",
+            "d": "Data Network System"
           }
         ],
         "correctAnswer": "a"
@@ -100,9 +105,10 @@
         "question": "Which popular software command is used to download a file from a web server?",
         "answers": [
           {
-            "a": "download",
+            "a": "upload",
             "b": "wget",
-            "c": "download"
+            "c": "download",
+            "d": "moc"
           }
         ],
         "correctAnswer": "b"
@@ -120,7 +126,8 @@
           {
             "a": "What Hath God Wrought",
             "b": "Good Morning Victory",
-            "c": "You Smell"
+            "c": "You Smell",
+            "d": "How Are You"
           }
         ],
         "correctAnswer": "a"
@@ -138,7 +145,8 @@
           {
             "a": "Modern Demograph",
             "b": "Mono Demo",
-            "c": "Modulate Demodulate"
+            "c": "Modulate Demodulate",
+            "d": "Modulate Duo"
           }
         ],
         "correctAnswer": "c"
@@ -156,7 +164,8 @@
           {
             "a": "SMTP",
             "b": "FTP",
-            "c": "DNS"
+            "c": "DNS",
+            "d": "LFT"
           }
         ],
         "correctAnswer": "a"

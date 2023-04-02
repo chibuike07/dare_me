@@ -47,7 +47,7 @@ You may also see any lint errors in the console.
 
 ## `Description`
 
-The project is a multi-choice quizz game that have the following features:
+The project is a multi-choice quizz game that is built with reactJs and react flux - `contexts` and `useReducer` that have the following features:
 
 - Difficulty [`easy`, `medium`, `hard`]
 - Track the user progress

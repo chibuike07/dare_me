@@ -38,6 +38,8 @@ export const handleNextQuiz = ({
         speechSynthesis.speak(finishedText);
         setTimeout(() => {
           failedQuizVoice.pause();
+          speechSynthesis.cancel();
+
           const userRecord = {
             id: v4(),
             correctAnsweredQuiz,
@@ -56,7 +58,7 @@ export const handleNextQuiz = ({
           }
 
           dispatch({ type: SHOW_FEEDBACK, payload: true });
-        }, 5000);
+        }, 4000);
       });
     } else if (parseInt(scoredPercentage, 10) >= 50) {
       passedQuizVoice.addEventListener("canplaythrough", () => {
@@ -64,6 +66,7 @@ export const handleNextQuiz = ({
         speechSynthesis.speak(finishedText);
         setTimeout(() => {
           passedQuizVoice.pause();
+          speechSynthesis.cancel();
           const userRecord = {
             id: v4(),
             correctAnsweredQuiz,
@@ -139,6 +142,7 @@ export const handleVoices = ({ type, indicator, correctAnswer }) => {
         winningaudio.play();
         setTimeout(() => {
           winningaudio.pause();
+          speechSynthesis.cancel();
         }, 3000);
       });
       break;
@@ -149,6 +153,7 @@ export const handleVoices = ({ type, indicator, correctAnswer }) => {
         losingAudio.play();
         setTimeout(() => {
           losingAudio.pause();
+          speechSynthesis.cancel();
         }, 3000);
       });
       break;

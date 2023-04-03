@@ -34,6 +34,7 @@ const WelcomePage = () => {
         </button>
 
         <SelectDifficulty
+          title="Select difficulty"
           onChange={(e) => handleSelectDifficulty(e)}
           value={quizDifficulty}
         >

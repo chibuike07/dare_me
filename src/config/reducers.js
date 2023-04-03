@@ -11,7 +11,6 @@ export const defaultState = {
   quizIndex: 0,
   showFeedBack: false,
   quizDifficulty: "RANDOM",
-  cloneFetchQuizz: [],
 };
 
 export const reducer = (state, action) => {
@@ -43,7 +42,6 @@ export const reducer = (state, action) => {
         answeredQuizData: [],
         doLater: [],
         quizDifficulty: "RANDOM",
-        cloneFetchQuizz: [],
       };
 
     case t.ANSWERED_QUIZZ:
@@ -69,9 +67,6 @@ export const reducer = (state, action) => {
 
     case t.GET_DIFFICULTY:
       return { ...state, quizDifficulty: payload };
-
-    case t.CLONE_FETCH_QUIZZ:
-      return { ...state, cloneFetchQuizz: payload };
 
     default:
       return state;

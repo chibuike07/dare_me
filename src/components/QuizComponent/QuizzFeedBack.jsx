@@ -24,7 +24,9 @@ const QuizzFeedBack = () => {
   ] = useContext(GameContext);
 
   const handleBack2WelcomeGame = () => {
-    return dispatch({ type: RESET });
+    dispatch({ type: RESET });
+
+    return window.orientation === 0 && window.location.reload();
   };
 
   return (

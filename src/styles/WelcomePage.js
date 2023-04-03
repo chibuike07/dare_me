@@ -75,6 +75,7 @@ export const SelectDifficulty = styled.select`
   border: 5px solid transparent;
   color: var(--color_white);
   outline: none;
+  cursor: pointer;
 
   option {
     color: #000;

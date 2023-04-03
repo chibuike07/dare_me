@@ -23,7 +23,7 @@ const OptionsList = ({ options, indicator, correctAnswer }) => {
   ] = useContext(GameContext);
   const [selected, setSelected] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  // console.log("selectedAnswer :>> top", selectedAnswer);
+  const [goNext, setGoNext] = useState(false);
   /**
    * If the user has already selected an answer, then don't let them select another one.
    */
@@ -42,6 +42,22 @@ const OptionsList = ({ options, indicator, correctAnswer }) => {
   };
 
   useEffect(() => {
+    goNext &&
+      setTimeout(() => {
+        handleNextQuiz({
+          correctAnsweredQuiz,
+          countSelectedOptions,
+          currentQuizData,
+          dispatch,
+          quizData,
+          doLater,
+          answeredQuizData,
+          quizIndex,
+        });
+      }, 3000);
+  }, [goNext]);
+
+  useEffect(() => {
     /**
      * If the selected answer is correct, then dispatch a correct answer action, otherwise, if the
      * selected answer is incorrect, then dispatch an incorrect answer action.
@@ -56,30 +72,21 @@ const OptionsList = ({ options, indicator, correctAnswer }) => {
           type: t.CORRECT_ANSWERED_QUIZZ,
           payload: quizData[quizIndex]?.id,
         });
+        setGoNext(true);
       } else if (
         selectedAnswer &&
         selectedAnswer.toLocaleLowerCase() !== correctAnswer
       ) {
         handleVoices({ type: "INCORRECT", correctAnswer, indicator });
+        setGoNext(true);
       }
     };
     handleCorrectAnswer();
-
-    if (selectedAnswer) {
-      setTimeout(() => {
-        handleNextQuiz({
-          correctAnsweredQuiz,
-          countSelectedOptions,
-          currentQuizData,
-          dispatch,
-          quizData,
-          doLater,
-          answeredQuizData,
-          quizIndex,
-        });
-      }, 5000);
-    }
+    return () => {
+      setGoNext(false);
+    };
   }, [selectedAnswer]);
+
   return (
     <Lists
       correctAnswer={correctAnswer}

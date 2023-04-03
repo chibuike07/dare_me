@@ -26,10 +26,10 @@ export const handleNextQuiz = ({
   let finishedText = new SpeechSynthesisUtterance(
     `woa! you have reached to the end of the quiz with ${correctAnsweredQuiz?.length}`
   );
-
   if (currentQuizData[0]?.no === quizData[quizData.length - 1]?.no) {
     let scoredPercentage =
       (correctAnsweredQuiz?.length / quizData?.length) * 100;
+
     const passedQuizVoice = new Audio(SlightlyVoice);
     const failedQuizVoice = new Audio(FailedVoice);
     if (parseInt(scoredPercentage, 10) < 50) {

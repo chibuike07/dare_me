@@ -65,6 +65,7 @@ export const WelComeButton = styled.div`
 export const SelectDifficulty = styled.select`
   width: 100px;
   padding: 0.3rem;
+  color: red;
   background: linear-gradient(
     to top,
     var(--box_selected_ans_color),

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DisplayGameScoreBoard = styled.aside`
-  /* color: #fff;
+  color: #fff;
   padding: 1rem;
   min-width: 300px;
   min-height: 20em;
@@ -9,8 +9,8 @@ export const DisplayGameScoreBoard = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; */
-  /* background: linear-gradient(var(--main_bg_color), var(--main_bg_color))
+  align-items: center;
+  background: linear-gradient(var(--main_bg_color), var(--main_bg_color))
       padding-box,
     linear-gradient(
         45deg,
@@ -19,7 +19,7 @@ export const DisplayGameScoreBoard = styled.aside`
       )
       border-box;
   border: 5px solid transparent;
-  border-radius: 50px; */
+  border-radius: 50px;
 
   h2 {
     text-transform: capitalize;

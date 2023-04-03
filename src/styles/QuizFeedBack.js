@@ -29,13 +29,13 @@ export const DisplayGameScoreBoard = styled.aside`
     text-align: center;
   }
   details {
-    /* margin: 1rem 0rem; */
+    margin: 1rem 0rem;
   }
 `;
 export const Button = styled.button`
   color: #fff;
   padding: 0.5rem;
-  /* margin-bottom: 1rem; */
+  margin-bottom: 1rem;
   background: linear-gradient(
       45deg,
       var(--box_selected_ans_color),

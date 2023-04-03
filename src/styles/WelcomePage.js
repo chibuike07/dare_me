@@ -44,11 +44,13 @@ export const Container = styled.article`
 
 export const QuizzLogo = styled.figure`
   width: 100%;
-  height: 10em;
+  height: 5em;
   display: flex;
   justify-content: center;
   img {
     object-fit: contain;
+    height: 100%;
+    width: auto;
   }
 `;
 export const WelComeButton = styled.div`

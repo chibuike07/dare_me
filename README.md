@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Instructions
 
-Kindly run `yarn run json-server` to start up the api connection server before running `yarn run start`
+Kindly run `yarn run dev` to start up the application.
 
 ---
 
@@ -24,9 +24,11 @@ You may also see any lint errors in the console.
 
 ---
 
-### `yarn json-server`
+### `yarn dev`
 
-hosts the json file and create an api for consumption.
+Runs the `yarn json-server` script and runs `yarn start` concorrectly.
+it hosts the json data to an api and starts the application.
+
 Open [http://localhost:3003/quizData](http://localhost:3003/quizData) to listen to requests.
 
 The page will reload when you make changes.\

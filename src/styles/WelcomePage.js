@@ -41,6 +41,16 @@ export const Container = styled.article`
     flex: 0.6;
   }
 `;
+
+export const QuizzLogo = styled.figure`
+  width: 100%;
+  height: 10em;
+  display: flex;
+  justify-content: center;
+  img {
+    object-fit: contain;
+  }
+`;
 export const WelComeButton = styled.div`
   display: flex;
   justify-content: center;

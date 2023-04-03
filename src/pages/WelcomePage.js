@@ -4,9 +4,11 @@ import { GameContext } from "../config/contexts";
 import { _difficulty } from "../utils/helpers";
 import {
   Container,
+  QuizzLogo,
   SelectDifficulty,
   WelComeButton,
 } from "../styles/WelcomePage";
+import Logo from "../assets/quizzLogo.png";
 
 const WelcomePage = () => {
   const [{ quizDifficulty }, dispatch] = useContext(GameContext);
@@ -17,6 +19,9 @@ const WelcomePage = () => {
 
   return (
     <Container>
+      <QuizzLogo>
+        <img src={Logo} alt="quiz-logo" />
+      </QuizzLogo>
       <section className="section">
         <h2>
           hello there! <br /> You are welcome to the Belivers Quizz

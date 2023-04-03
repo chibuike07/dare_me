@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.article`
-  width: 50%;
-  min-height: 20vh;
+  width: 70%;
   min-width: 300px;
+  min-height: 20vh;
   background-color: var(--main_bg_color);
   display: flex;
   flex-direction: column;
@@ -19,9 +19,6 @@ export const Container = styled.article`
       border-box;
   border: 5px solid transparent;
   border-radius: 50px;
-  @media only screen and (max-width: 786) {
-    flex-grow: 0.7;
-  }
 
   .section {
     min-height: 10em;
@@ -39,6 +36,9 @@ export const Container = styled.article`
       color: var(--color_white);
       text-align: center;
     }
+  }
+  @media (max-width: 768px) {
+    flex: 0.6;
   }
 `;
 export const WelComeButton = styled.div`

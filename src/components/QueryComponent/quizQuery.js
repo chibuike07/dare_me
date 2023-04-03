@@ -1,9 +1,11 @@
 import { CustomAxios } from "../../utils/customAxios";
-// import publicJson from "../../../public/quiz_data.json";
 
 export const getQuiz = async () => {
-  const result = await CustomAxios.get("http://localhost:3003/quizData").then(
-    (res) => res.data
-  );
+  const result = await CustomAxios.get("/quizData", {
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.data);
   return result;
 };

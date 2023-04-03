@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DisplayGameScoreBoard = styled.aside`
-  color: #fff;
+  /* color: #fff;
   padding: 1rem;
   min-width: 300px;
   min-height: 20em;
@@ -9,8 +9,8 @@ export const DisplayGameScoreBoard = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background: linear-gradient(var(--main_bg_color), var(--main_bg_color))
+  align-items: center; */
+  /* background: linear-gradient(var(--main_bg_color), var(--main_bg_color))
       padding-box,
     linear-gradient(
         45deg,
@@ -19,7 +19,7 @@ export const DisplayGameScoreBoard = styled.aside`
       )
       border-box;
   border: 5px solid transparent;
-  border-radius: 50px;
+  border-radius: 50px; */
 
   h2 {
     text-transform: capitalize;
@@ -29,13 +29,13 @@ export const DisplayGameScoreBoard = styled.aside`
     text-align: center;
   }
   details {
-    margin: 1rem 0rem;
+    /* margin: 1rem 0rem; */
   }
 `;
 export const Button = styled.button`
   color: #fff;
   padding: 0.5rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   background: linear-gradient(
       45deg,
       var(--box_selected_ans_color),

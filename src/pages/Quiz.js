@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useRef } from "react";
-import styled from "styled-components";
 import QuizLayout from "../components/QuizComponent/QuizLayout";
 import QuizzFeedBack from "../components/QuizComponent/QuizzFeedBack";
 import * as t from "../config/actions";

@@ -10,8 +10,8 @@ export const Container = styled.article`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  @media only screen and (max-width: 500px) {
-    width: 100%;
+  @media only screen and (max-width: 600px) {
+    flex-grow: 1;
   } ;
 `;
 

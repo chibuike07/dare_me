@@ -42,6 +42,7 @@ You may also see any lint errors in the console.
 - [react-share]: version ^4.4.1.
 - [styled-component]: version ^5.3.9.
 - [uuid]: version ^9.0.0.
+- [concurrently]: version ^8.0.1.
 
 ---
 

@@ -7,7 +7,6 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--layout_color);
 `;
 
 export const ProgressBar = styled.div`

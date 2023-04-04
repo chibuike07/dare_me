@@ -5,6 +5,7 @@ import QuizzFeedBack from "../components/QuizComponent/QuizzFeedBack";
 import * as t from "../config/actions";
 import { GameContext } from "../config/contexts";
 import WelcomePage from "./WelcomePage";
+import BgImage from "../assets/quizBg.png";
 import {
   handleDoubleSelects,
   handleNextQuiz,
@@ -85,7 +86,11 @@ const Quiz = () => {
   }, [answeredQuizData, doLater]);
 
   return (
-    <Container>
+    <Container
+      style={{
+        backgroundImage: `linear-gradient(to bottom , var(--layout_color) 40%, var(--layout_color2)), url(${BgImage})`,
+      }}
+    >
       {!startQuizz ? <WelcomePage /> : false}{" "}
       <TimeLimitWrapper>
         {!showFeedBack && startQuizz ? (

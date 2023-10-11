@@ -8,7 +8,6 @@ import {
   handleDoubleSelects,
   handleNextQuiz,
   handleRenderQuizz,
-  quizDatas,
 } from "../../utils/helpers";
 import { ANSWERED_QUIZZ } from "../../config/actions";
 import { ButtonGroup, Container, QuizzWrapper } from "../../styles/QuizLayout";
@@ -28,13 +27,11 @@ const QuizLayout = () => {
     dispatch,
   ] = useContext(GameContext);
   const [showSkip, setShowSkip] = useState(true);
-  const [onWeb, setOnWeb] = useState(false);
   const { isLoading, isFetching } = useQuery({
     queryKey: ["getQuiz"],
     refetchOnWindowFocus: false,
     queryFn: getQuiz,
     retry: 1,
-    enabled: onWeb,
     onError: (err) => {
       console.error("err", err);
     },
@@ -48,21 +45,6 @@ const QuizLayout = () => {
       });
     },
   });
-
-  useEffect(() => {
-    if (window.orientation === 0) {
-      setOnWeb(false);
-      return handleRenderQuizz({
-        data: quizDatas,
-        quizDifficulty,
-        quizIndex,
-        t,
-        dispatch,
-      });
-    } else {
-      return setOnWeb(true);
-    }
-  }, []);
 
   useEffect(() => {
     let timeout = setTimeout(() => {

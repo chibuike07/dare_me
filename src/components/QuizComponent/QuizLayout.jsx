@@ -36,7 +36,6 @@ const QuizLayout = () => {
       console.error("err", err);
     },
     onSuccess: (data) => {
-      console.log("data", data);
       return handleRenderQuizz({
         data,
         quizDifficulty,

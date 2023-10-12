@@ -63,7 +63,7 @@ const QuizzFeedBack = () => {
       <ShareIconWrapper>
         <WhatsappShareButton
           url={`${window.location.href}`}
-          title={"Believer Quizz Score"}
+          title={`Dare-Me Quizz Score ${correctAnsweredQuiz?.length} out of{" "} ${answeredQuizData?.length} questions`}
           openShareDialogOnClick={true}
           className="iconWrapper"
         >
@@ -75,7 +75,7 @@ const QuizzFeedBack = () => {
         </WhatsappShareButton>
         <FacebookShareButton
           url={`${window.location.href}`}
-          title={"Believer Quizz Score"}
+          title={`Dare-Me Quizz Score ${correctAnsweredQuiz?.length} out of{" "} ${answeredQuizData?.length} questions`}
           openShareDialogOnClick={true}
           className="iconWrapper"
           hashtag={"#multiplechoicequiz"}
@@ -88,7 +88,7 @@ const QuizzFeedBack = () => {
         </FacebookShareButton>
         <LinkedinShareButton
           url={`${window.location.href}`}
-          title={"Believer Quizz Score"}
+          title={`Dare-Me Quizz Score ${correctAnsweredQuiz?.length} out of{" "} ${answeredQuizData?.length} questions`}
           openShareDialogOnClick={true}
           className="iconWrapper"
         >
@@ -101,7 +101,7 @@ const QuizzFeedBack = () => {
 
         <TwitterShareButton
           url={`${window.location.href}`}
-          title={"Believer Quizz Score"}
+          title={`Dare-Me Quizz Score ${correctAnsweredQuiz?.length} out of{" "} ${answeredQuizData?.length} questions`}
           openShareDialogOnClick={true}
           className="iconWrapper"
         >
